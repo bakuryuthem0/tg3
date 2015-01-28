@@ -1,0 +1,138 @@
+body,html
+{
+	padding: 0px;
+	margin: 0px;
+	font-size: 66.66%;
+	background: rgb(50,50,50);
+	font-family: 'Roboto', 'sans-serif';
+}
+.active
+{
+	background-image: linear-gradient(to bottom, rgba(219, 219, 219, 0) 0px, rgba(226, 226, 226, 0) 100%);
+	background-repeat: repeat-x;
+	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.0) inset;
+	color: white !important;
+}
+.bloque
+{
+	min-height: 100px;
+}
+.contenedorBot
+{
+	color: white;
+}
+.cpy
+{
+	color:white;
+}
+.footer
+{
+	width: 100%;
+	margin: 0px;
+}
+.header
+{
+	background-color: rgb(199,199,198);
+	position: fixed;
+	width: 100%;
+	max-height: 100px;
+	margin: 0px !important;
+	z-index: 5;
+}
+
+.info
+{
+	list-style: none;
+	padding-left: 0px !important;
+}
+.info > li > a,.info > li >p > a
+{
+	color: white;
+	text-decoration: none;
+}
+.info_titulo > a
+{
+	color: white;
+}
+.logo
+{
+	width: 15%;
+	max-width: 250px;
+	min-width: 136px;
+	float: left;
+	margin-top: -10px;
+}
+.navbar-default
+{
+	background-color: transparent;
+	background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0) 0,rgba(248, 248, 248, 0) 100%);
+	border-color: transparent;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0),0 1px 5px rgba(0,0,0,0);
+	display: inline;
+	vertical-align: middle;
+}
+.navbar-nav
+{
+	width: 60%;
+	margin-left: 10%;
+}
+.navbar-nav > li
+{
+	width: 20%;
+}
+.navbar-nav > .active > a{
+    color: #000;
+    background-image: linear-gradient(to bottom, rgba(219, 219, 219, 0) 0px, rgba(226, 226, 226, 0) 100%) !important;
+    background-color: rgba(231, 231, 231, 0) !important;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0) inset !important;
+}
+.navbar-nav > li > a > h4
+{
+	color: black;
+	text-align: center;
+	font-size: 1.7em;
+}
+.navbar-nav > li > a > h5
+{
+	color: black;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+@media(max-width: 991px){
+	.logo
+	{
+		margin-top: 0px;
+	}
+	.navbar-nav
+	{
+		margin-left: 0px;
+		width: 80%;
+	}
+	.navbar-nav > li{
+		width:20%;
+	}
+}
+@media(max-width: 565px){
+	.contenedorBot
+	{
+		width: 100%;
+		text-align: center;
+		color: white;
+	}
+	.info
+	{
+		list-style: none;
+	}
+	.info > li > a,.info > li >p > a
+	{
+		color: white;
+		text-decoration: none;
+	}
+}
+.textoPromedio
+{
+	font-size: 1.5em;
+}
+
+/*---------------Index--------------*/
