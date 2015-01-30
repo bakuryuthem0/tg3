@@ -18,6 +18,7 @@
 		{{ HTML::style('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css') }}
 		{{ HTML::style('css/slicknav.css') }}
 		{{ HTML::style('http://fonts.googleapis.com/css?family=Roboto:400,700,300') }}
+		{{ HTML::style('js/slick-master/slick/slick.css') }}
 		{{ HTML::style('css/custom.css') }}
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -44,7 +45,7 @@
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<!-- Brand and toggle get grouped for better mobile display -->
-							<img src="{{ asset('images/logo-01.png') }}" class="logo">
+							<a href="{{ URL::to('/') }}"><img src="{{ asset('images/logo-01.png') }}" class="logo"></a>
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								<span class="sr-only">Toggle navigation</span>
@@ -121,7 +122,7 @@
 							</div>
 						</div>						
 					</div>
-					<div id="redes">
+					<div id="redes" class="col-sm-offset-4 col-xs-6">
 						<a target="_blank" href="https://www.facebook.com/pages/Tecnographic-Venezuela/1610712109156293?ref=hl">
 							<div id="face" class="redes_sociales">
 							</div>
@@ -146,8 +147,43 @@
 	</body>
 	{{ HTML::script('js/jquery.min.js')}}
 	{{ HTML::script('js/bootstrap.min.js') }}
-	{{ HTML::script('js/cambio_tam.js') }}
-	{{ HTML::script('js/cambio_let.js') }}
-	{{ HTML::script('js/cambio_img.js') }}
+	{{ HTML::script('js/scroll/jquery.nicescroll.min.js') }}
 	{{ HTML::script('js/custom.js') }}
+	<!--{{ HTML::script('js/cambio_let.js') }}
+	{{ HTML::script('js/cambio_img.js') }}
+	{{ HTML::script('js/custom.js') }}-->
+	{{ HTML::script('js/slick-master/slick/slick.min.js') }}
+	<script type="text/javascript">
+			$(document).ready(function(){
+				$('.mySlide').slick({
+					adaptiveHeight: false,
+					autoplay		: true,
+					autoplaySpeed : 5000,
+					fade: true,
+					cssEase: 'linear',
+					dots: true,
+					infinite: true,
+					speed: 300,
+					slidesToShow: 1,
+				});
+				$('.fade').slick()
+				
+				/*$('.fade').slick({
+				  dots: true,
+				  infinite: true,
+				  speed: 500,
+				  fade: true,
+				  cssEase: 'linear',
+				  adaptiveHeight: true,
+				  autoplay		: true,
+				  autoplaySpeed : 5000
+				});
+				*/
+			});
+			
+
+			
+
+			
+		</script>
 </html>

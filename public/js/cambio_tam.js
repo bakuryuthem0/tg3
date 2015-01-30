@@ -12,9 +12,8 @@ function inicia ()
 			var width = window.width;
 			var height = window.height;
 		}
-		$('.cuadro').css('min-height',height);
-		$('#articulos').css('min-height',height-(height*0.4));
-		$('#contactenos').css('height',height-(height*0.3));
+		$('.contenedorGrande').css('min-height',height-100);
+
 	});
 	if (document.body) 
 	{
@@ -25,7 +24,6 @@ function inicia ()
 		var width = window.width;
 		var height = window.height;
 	}
-	$('.cuadro').css('min-height',height);
-	$('#articulos').css('height',height-(height*0.4));
-	$('#contactenos').css('height',height-(height*0.3));
+	alert(height+' '+height-100)
+	$('.contenedorGrande').css('min-height',height-100);
 }

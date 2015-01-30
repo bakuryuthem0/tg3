@@ -1,4 +1,35 @@
-$(document).ready(function(){
+jQuery(document).ready(function($) {
+	$("html").niceScroll();
+});
+/*$(document).ready(function ()
+{
+	$("html").niceScroll();
+	$(window).resize(function(){
+		if (document.body) 
+		{
+			var width = document.body.clientWidth;	
+			var height = document.body.clientHeight;
+		}else
+		{
+			var width = window.width;
+			var height = window.height;
+		}
+		$('.contenedorGrande').css('min-height',height);
+
+	});
+	if (document.body) 
+	{
+		var width = document.body.clientWidth;	
+		var height = document.body.clientHeight;
+	}else
+	{
+		var width = window.width;
+		var height = window.height;
+	}
+	$('.contenedorGrande').css('min-height',height));
+});*/
+
+/*$(document).ready(function(){
 	$('.navbar-toggle').toggle(function(){
 		$('.menusera').css({'display':'block'}).animate({'opacity':1},500)
 	},function(){
