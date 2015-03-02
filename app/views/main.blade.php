@@ -40,7 +40,7 @@
 	</head>
 	<body>
 		<div class="row header">
-			<div class="container">
+			<div class="container" style="width: 90%;">
 				<header>
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">

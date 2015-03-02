@@ -17,6 +17,26 @@ function()
 		opacity: '0'
 	},500)
 })
+jQuery(document).ready(function($) {
+	$(window).scroll(function(){
+		var pos = $('#about').position();
+
+		if (pos.top >= (parseInt($(window).scrollTop())+parseInt(95))) {
+			$('.caricatura').stop().animate({
+				'opacity': 0,
+				},
+				250);
+			console.log('entro')
+		}else
+		{
+			$('.caricatura').stop().animate({
+				'opacity': 1,
+				},
+				250);
+		}
+		console.log(pos.top+' '+(parseInt($(window).scrollTop())+parseInt(95)));
+	})
+});
 /*$(document).ready(function ()
 {
 	$("html").niceScroll();

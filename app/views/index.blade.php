@@ -1,5 +1,6 @@
 @extends('main')
 @section('content')
+<div class="caricatura"></div>
 <div class="row contenedorGrande banner">
 	<img src="{{ URL::to('images/banner.gif') }}">
 </div>
@@ -10,11 +11,20 @@
 				<img src="{{ asset('images/img_serv/nuestros servicios-01.png') }}">
 			</div>
 			<div class="col-xs-12">
+				@foreach($servicios as $clave => $servicio)
+				<a href="{{ URL::to('servicios/'.$servicio->id) }}">
+					<div class="servicio" id="{{ $servicio->nombre }}" style="background:url('{{ asset($servicio->alt) }}')">
+						<img src="{{ URL::to('images/'.$servicio->image) }}">
+					</div>
+				</a>
+				@endforeach
+			</div>
+			<div class="col-xs-12">
 				<div class="col-xs-6 contenedorBot textoServicios">
 					<h3>AGENCIA DE DISEÑO GRÁFICO PUBLICITARIO Y SISTEMAS ADMINISTRATIVOS</h3>
 					<p class="textoPromedio"><strong>Tecnographic de Venezuela, C.A.</strong>, es su agencia de Diseño Grafico y de Sistemas Administrativos, en Maracay, Venezuela; contamos con personal altamente calificado en el ramo de la publicidad digital, diseño gráfico y diseño de herramientas online como páginas web, tiendas virtuales, campañas de email, redes sociales y sistemas administrativos. Estamos ubicados en la Ciudad de Maracay, además prestamos todos nuestros servicios de diseño gráfico en el resto de Venezuela.</p>
 					<p class="textoPromedio">
-					 Entre nuestros servicios como agencia publicitaria y consultora podemos citar: Asesoría en estrategias de mercadeo, Diseño de Imagen Corporativa, Diseño Gráfico, Diseño de Logotipos en Maracay, Diseño de Páginas Web  en Maracay, Diseño de Afiches en Maracay, Diseño de Banners, Diseño de Perfiles para redes sociales, Diseño  de Empaques de Productos,  Diseño de Tarjetas de Presentación, Diseño de Señalética, Fotografía de Productos, Fotografía de Modelos, Fotografía de Espacio</p>
+					Entre nuestros servicios como agencia publicitaria y consultora podemos citar: Asesoría en estrategias de mercadeo, Diseño de Imagen Corporativa, Diseño Gráfico, Diseño de Logotipos en Maracay, Diseño de Páginas Web  en Maracay, Diseño de Afiches en Maracay, Diseño de Banners, Diseño de Perfiles para redes sociales, Diseño  de Empaques de Productos,  Diseño de Tarjetas de Presentación, Diseño de Señalética, Fotografía de Productos, Fotografía de Modelos, Fotografía de Espacio</p>
 				</div>
 				<div class="col-xs-4 contSlider">
 					<div class="mySlide">
@@ -22,9 +32,8 @@
 						<div><img src="{{URL::to('images/slides/slider2-01.png')}}"></div>
 						<div><img src="{{URL::to('images/slides/slider3-01.png')}}"></div>
 					</div>
-				</div>			
-			</div>	
-			
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="mini_gif">
@@ -40,115 +49,244 @@
 		</div>
 	</div>
 	<div id="banda" class="row">
-			<div class="cont_palabra col-xs-12">
-				<div id="top" class="col-xs-12">
-					<div class="col-xs-12" >
-						<div class="col-xs-6 medio textLeft">
-							<p class="palabra col-xs-6 textoPromedio" id="c">
-								Constancia
-							</p>
-							<p  class="palabra col-xs-6 textoPromedio" id="r">
-								Responsabilidad
-							</p>
-						</div>
-						
-					</div>
-					<div class="col-xs-12" >
-						<div class="col-xs-6 medio textMid">
-							<p class="palabra col-xs-6 textoPromedio" id="g">
-								Gratificación
-							</p>
-							<p class="palabra col-xs-6 textoPromedio" id="i">
-								Innovación
-							</p>
-						</div>
-					</div>
-					<div class="col-xs-12">
-						<div class="col-xs-6 medio textRight">
-							<p class="palabra col-xs-6 textoPromedio" id="t">
-								Tecnología
-							</p>
-							<p class="palabra col-xs-6 textoPromedio" id="a">
-								Autenticidad
-							</p>
-						</div>
+		<div class="cont_palabra col-xs-12">
+			<div id="top" class="col-xs-12">
+				<div class="col-xs-12" style="margin-top:1em;">
+					<div class="col-xs-6 medio textLeft">
+						<p class="palabra col-xs-6 textoMedio" id="c">
+							Constancia
+						</p>
+						<p  class="palabra col-xs-6 textoMedio" id="r">
+							Responsabilidad
+						</p>
 					</div>
 				</div>
-				<div style="clear:both;"></div>
+				<div class="col-xs-12" >
+					<div class="col-xs-6 medio textMid">
+						<p class="palabra col-xs-6 textoMedio" id="g">
+							Gratificación
+						</p>
+						<p class="palabra col-xs-6 textoMedio" id="i">
+							Innovación
+						</p>
+					</div>
+				</div>
 				<div class="col-xs-12">
-					<div class="medio col-xs-6 textMid">
-						<h1 class="letra" id="T">T</h1>
-						<h1 class="letra" id="E">E</h1>
-						<h1 class="letra" id="C">C</h1>
-						<h1 class="letra" id="N">N</h1>
-						<h1 class="letra" id="O">O</h1>
-						<h1 class="letra" id="G">G</h1>
-						<h1 class="letra" id="R">R</h1>
-						<h1 class="letra" id="A">A</h1>
-						<h1 class="letra" id="P">P</h1>
-						<h1 class="letra" id="H">H</h1>
-						<h1 class="letra" id="I">I</h1>
-						<h1 class="letra" id="K">C</h1>
-					</div>
-				</div>
-				
-				<div id="bot" class="col-xs-12">
-					<div class="col-xs-12">
-						<div class="col-xs-6 medio textRight">
-							<p class="palabra col-xs-4 textoPromedio" id="e">
-								Evolución
-							</p>
-							<p class="palabra col-xs-4 textoPromedio" id="o">
-								Organización
-							</p>
-							<p class="palabra col-xs-4 textoPromedio" id="k">
-								Crecimiento
-							</p>
-						</div>
-						
-					</div>
-					<div class="col-xs-12">
-						<div class="col-xs-6 medio textLeft">
-							<p class="palabra col-xs-4 textoPromedio" id="n">
-								Negociación
-							</p>
-							<p class="palabra col-xs-4 textoPromedio" id="p">
-								Profesionalismo
-							</p>
-							<p class="palabra col-xs-4 textoPromedio" id="h">
-								Humildad
-							</p>
-						</div>
+					<div class="col-xs-6 medio textRight">
+						<p class="palabra col-xs-6 textoMedio" id="t">
+							Tecnología
+						</p>
+						<p class="palabra col-xs-6 textoMedio" id="a">
+							Autenticidad
+						</p>
 					</div>
 				</div>
 			</div>
-			
-		</div>
-		<div class="container">
-				<div class="row about">
-					<div class="col-xs-6">
-						<div class="about1 ab2 textoPromedio">
-							<h3><strong>Tecnographic Venezuela</strong></h3>
-							<p>Somos una Agencia publicitaria y consultora responsable dedicada a la publicidad digital,  diseño de páginas web, tiendas virtuales, campañas de email, redes sociales y  desarrollo  de sistemas administrativos. </p>
-							<p>
-							Nos enfocamos en brindar a nuestros clientes  un servicio  de alto grado de funcionalidad,  interactividad, de manera que el sitio web se convierta en una verdadera herramienta para hacer negocios online, y que se adapte a su  necesidad.
-							</p>
-							<p>En<strong>Tecnography</strong>
-							 de Venezuela desarrollamos e integramos soluciones tecnológicas basadas en la sistematización y en las nuevas tecnologías, utilizando las últimas aplicaciones existentes en el mercado. Construimos el futuro, dotando a nuestros clientes de las herramientas para competir en la nueva era.
-						</div>
-					</div>
-					<div class="col-xs-6">
-						<div class="about1 textoPromedio">
-							<h3>Nuestra Meta</h3>
-							<p>Nuestra meta es lograr consolidar la empresa en el mercado de la tecnología web, brindando servicio  a la mayor cantidad de clientes en el menor tiempo posible. Dar soporte técnico y actualización de páginas desarrolladas. Ser reconocidos local, nacional e internacionalmente.</p>
-							<h3>Nuestro Equipo</h3>
-							<p>Nuestro equipo de profesionales está formado por especialistas en distintas áreas como Diseño Grafico, Ingeniería en sistemas, Programación, Comunicación Social, y Community Manager.</p>
-						</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<div class="medio col-xs-6 textMid">
+					<h1 class="letra" id="T">T</h1>
+					<h1 class="letra" id="E">E</h1>
+					<h1 class="letra" id="C">C</h1>
+					<h1 class="letra" id="N">N</h1>
+					<h1 class="letra" id="O">O</h1>
+					<h1 class="letra" id="G">G</h1>
+					<h1 class="letra" id="R">R</h1>
+					<h1 class="letra" id="A">A</h1>
+					<h1 class="letra" id="P">P</h1>
+					<h1 class="letra" id="H">H</h1>
+					<h1 class="letra" id="I">I</h1>
+					<h1 class="letra" id="K">C</h1>
+				</div>
+			</div>
+			<div id="bot" class="col-xs-12">
+				<div class="col-xs-12">
+					<div class="col-xs-6 medio textRight">
+						<p class="palabra col-xs-4 textoMedio" id="e">
+							Evolución
+						</p>
+						<p class="palabra col-xs-4 textoMedio" id="o">
+							Organización
+						</p>
+						<p class="palabra col-xs-4 textoMedio" id="k">
+							Crecimiento
+						</p>
 					</div>
 				</div>
+				<div class="col-xs-12">
+					<div class="col-xs-6 medio textLeft">
+						<p class="palabra col-xs-4 textoMedio" id="n">
+							Negociación
+						</p>
+						<p class="palabra col-xs-4 textoMedio" id="p">
+							Profesionalismo
+						</p>
+						<p class="palabra col-xs-4 textoMedio" id="h">
+							Humildad
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div id="refran">
-			<img src="{{URL::to('images/refran-01.png')}}">
+	</div>
+	<div class="container">
+		<div class="row about" style="margin-top:5em;">
+			<div class="col-xs-12">
+				<div class="col-xs-6 contAbout1">
+					<div class="about1 ab2">
+						<h3><strong style="font-size:1.5em;">Tecnographic Venezuela</strong></h3>
+						<p class="textoPromedio">Somos una Agencia publicitaria y consultora responsable dedicada a la publicidad digital,  diseño de páginas web, tiendas virtuales, campañas de email, redes sociales y  desarrollo  de sistemas administrativos. </p>
+						<p class="textoPromedio">
+							Nos enfocamos en brindar a nuestros clientes  un servicio  de alto grado de funcionalidad,  interactividad, de manera que el sitio web se convierta en una verdadera herramienta para hacer negocios online, y que se adapte a su  necesidad.
+						</p>
+						<p class="textoPromedio">En<strong>Tecnography</strong>
+							de Venezuela desarrollamos e integramos soluciones tecnológicas basadas en la sistematización y en las nuevas tecnologías, utilizando las últimas aplicaciones existentes en el mercado. Construimos el futuro, dotando a nuestros clientes de las herramientas para competir en la nueva era.</p>
+					</div>
+				</div>
+				<div class="col-xs-6 contAbout1">
+					<div class="about1 textoPromedio">
+						<h3 style="font-size:2.5em;">Nuestra Meta</h3>
+						<p>Nuestra meta es lograr consolidar la empresa en el mercado de la tecnología web, brindando servicio  a la mayor cantidad de clientes en el menor tiempo posible. Dar soporte técnico y actualización de páginas desarrolladas. Ser reconocidos local, nacional e internacionalmente.</p>
+						<h3 style="font-size:2.5em;">Nuestro Equipo</h3>
+						<p>Nuestro equipo de profesionales está formado por especialistas en distintas áreas como Diseño Grafico, Ingeniería en sistemas, Programación, Comunicación Social, y Community Manager.</p>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+	<div class="refran">
+		<img src="{{URL::to('images/refran-01.png')}}">
+	</div>
 </div>
+<div id="news">
+	<div class="container">
+		<div class="col-xs-12">
+			<div class="col-xs-4 cont_titulo_news">
+				<img src="{{ URL::to('images/img_serv/portafolio.png') }}">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row news" style="margin-bottom: 5em;">
+			<div class="col-xs-6  text-left contNewsPics">
+				<div class="col-xs-12 newsPics">
+					<img class="img-responsive picsGall" src="images/picNews/pagina web benedettococina-01.jpg"/>
+				</div>
+				<div class="col-xs-12">
+					<h3 class="titPort"><a href="#">Benedetto Cocina</a></h3>
+					<p class="cont textoBlanco textoPromedio">Diseño de logotipo, diseño de página web con catálogo de servicios realizados para empresa pionera en convertir la cocina en ambiente estético y funcional.</p>
+					<hr class="hrNews">
+				</div>
+			</div>
+			<div class="col-xs-6 text-right contNewsPics">
+				<div class="col-xs-12 newsPics">
+					<img class="img-responsive picsGall" src="images/picNews/pagina web carlota marquez-01.jpg"/>
+				</div>
+				<div class="col-xs-12">
+					<h3 class="titPort"><a href="#">Carlota Marques</a></h3>
+					<p class="cont textoBlanco textoPromedio">Diseño de página web para diseñadora de moda, plataforma multi-idiomas, auto gestionable para la comercialización de sus colecciones.</p>
+					<hr class="hrNews">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row news2 news">
+			<div class="col-xs-6 text-left contNewsPics">
+				<div class="col-xs-12 newsPics">
+					<img class="img-responsive picsGall" src="images/picNews/pagina web motopanama-01.jpg"/>
+				</div>
+				<div class="col-xs-12">
+					<h3 class="titPort"><a href="#">Moto Panana</a></h3>
+					<p class="cont textoBlanco textoPromedio">Diseño de página web, portal de comercialización de motos en Panamá.</p>
+				</div>
+				<hr class="hrNews">
+			</div>
+			<div class="col-xs-6 text-right contNewsPics">
+				<div class="col-xs-12 newsPics">
+					<img class="img-responsive picsGall" src="images/picNews/pagina web rancho burguer-01-01.jpg"/>
+				</div>
+				<div class="col-xs-12">
+					<h3 class="titPort"><a href="#">Rancho Burguer</a></h3>
+					<p class="cont textoBlanco textoPromedio">Diseño de página web para restaurant de hamburguesas en Maracaibo.</p>
+					<hr class="hrNews">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row news2 news">
+			<div class="col-xs-6 text-left contNewsPics">
+				<div class="col-xs-12 newsPics">
+					<img class="img-responsive picsGall" src="images/picNews/pagina web solodeportes-01.jpg"/>
+				</div>
+				<div class="col-xs-12">
+					<h3 class="titPort"><a href="#">Solodeportes.net</a></h3>
+					<p class="cont textoBlanco textoPromedio">Diseño de imagen corporativa, diseño web para portal informativo de deportes.</p>
+					<hr class="hrNews">
+				</div>
+			</div>
+			<div class="col-xs-6 text-right contNewsPics">
+				<div class="col-xs-12 newsPics">
+					<img class="img-responsive picsGall" src="images/picNews/paqina web peluqueria-01.jpg"/>
+				</div>
+				<div class="col-xs-12">
+					<h3 class="titPort"><a href="#">Fashion Gils</a></h3>
+					<p class="cont textoBlanco textoPromedio">Diseño de página web, auto gestionable para la comercialización de nuevos servicios y promociones  para salón de belleza y spa.</p>
+					<hr class="hrNews">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="contact" style="padding-bottom: 5em;">
+	<div class="container">
+		<div class="col-xs-12">
+			<div class="col-xs-6 cont_titulo_contact">
+				<img src="{{ URL::to('images/img_serv/contacto-01.png') }}">
+			</div>
+		</div>
+	</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12" style="margin-bottom:5em;">
+						<p class="textoBlanco textoGrande textMid">
+							Agradecemos nos contacte para facilitarle un presupuesto 
+	relacionado con su proyecto o para cualquier otro comentario.
+						</p>
+				</div>
+				<div class="col-xs-6 cont contactusBot" style="margin-bottom:5em;">
+					<div class="col-xs-12">
+						<ul class="textMid ulContact textoPromedio textoBlanco" style="padding-left: 0px;">
+							<li><i class="fa fa-envelope"></i><strong> tecnographicvenezuela@gmail.com</strong></li>
+							<li><i class="fa fa-skype"></i><strong> Tecnographic Venezuela</strong></li>
+							<li><i class="fa fa-comments"></i><strong> Tambien puede contactar con nosotros mediante nuestro chat en el horario comprendido entre 8:15 am y 5:00 pm de lunes a viernes</strong></li>
+						</ul>
+					</div>
+					<div class="col-xs-12">
+					                        <a class="twitter-timeline"  href="https://twitter.com/tecnographicVE" data-widget-id="557266883888836608">Tweets por el @tecnographicVE.</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+          
+					</div>
+				</div>
+
+				<div class="col-xs-6 forma contactusBot">
+					<legend class="textoBlanco">Por favor llene el siguiente formulario si desea que nuestros agentes se pongan en contacto con usted.</legend>
+					<form>
+						<input type="text" class="form-control formInput name " name="name" placeholder='Nombre *'/>
+						<input type="text" class="form-control formInput Email email" name="email" placeholder='Email *'/>
+						<input type="text" class="form-control formInput Subject subject" name="subject" placeholder='Asunto'/>
+						<textarea type="text" class="form-control formInput Message message" name="message" placeholder='Mensaje *' rows="7"></textarea>
+						<div class="cBtn col-xs-12" style="padding-left: 0px;">
+							<ul class="ulContact" style="padding-left: 0px;">
+								<li class="btn clear"><span>Borrar Campos</span></li>
+								<li class="btn send"><span>Enviar Mensaje</span></li>
+							</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>	
+	</div>	
 @stop

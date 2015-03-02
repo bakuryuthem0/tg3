@@ -20,7 +20,8 @@ class HomeController extends BaseController {
 		$title = 'Tecnographic Venezuela | diseño y desarrollo de paginas web,imagen corporativa y sistemas administrativos';
 		$meta = "Somos una empresa de diseño y desarrollo de paginas web en la ciudad de maracay";
 		$href = array('#home' ,'#project','#about','#news','#contact');
-		return View::make('index')->with('title',$title)->with('href',$href)->with('meta',$meta);
+		$servicios = Servicios::get();
+		return View::make('index')->with('title',$title)->with('href',$href)->with('meta',$meta)->with('servicios',$servicios);
 	}
 
 }
