@@ -96,6 +96,71 @@ body,html
 	background: url('../images/twitter-01.png');
 	background-size: 100% 100%;
 }
+
+
+/*-------Servicios-------*/
+#diseno_web
+{
+	background-image: url(../images/diseno_web.png);
+	background-size: 100% 100%;
+}
+#diseno_web:hover
+{
+	background-image: url(../images/diseno_web_alt.png);
+	background-size: 100% 100%;
+}
+#imagen_corporativa
+{
+	background-image: url(../images/imagen_corporativa.png);
+	background-size: 100% 100%;
+}
+#imagen_corporativa:hover
+{
+	background-image: url(../images/imagen_corporativa_alt.png);
+	background-size: 100% 100%;
+}
+#medios_impresos
+{
+	background-image: url(../images/medios_impresos.png);
+	background-size: 100% 100%;
+}
+#medios_impresos:hover
+{
+	background-image: url(../images/medios_impresos_alt.png);
+	background-size: 100% 100%;
+}
+#pub_exterior
+{
+	background-image: url(../images/pub_exterior.png);
+	background-size: 100% 100%;
+}
+#pub_exterior:hover
+{
+	background-image: url(../images/pub_exterior_alt.png);
+	background-size: 100% 100%;
+}
+#fotografia
+{
+	background-image: url(../images/fotografia.png);
+	background-size: 100% 100%;
+}
+#fotografia:hover
+{
+	background-image: url(../images/fotografia_alt.png);
+	background-size: 100% 100%;
+}
+#sistema_administrativo
+{
+	background-image: url(../images/sistema_administrativo.png);
+	background-size: 100% 100%;
+}
+#sistema_administrativo:hover
+{
+	background-image: url(../images/sistema_administrativo_alt.png);
+	background-size: 100% 100%;
+}
+/*-----------------------*/
+
 .about1
 {
 	text-align: justify;
@@ -263,7 +328,7 @@ body,html
 }
 .navbar-nav
 {
-	width: 60%;
+	width: 100%;
 	float: none;
 	display: block;
 	margin: 0 auto;
@@ -271,7 +336,7 @@ body,html
 }
 .navbar-nav > li
 {
-	width: 20%;
+	width: 15%;
 }
 .navbar-nav > .active > a{
     color: #000;
@@ -283,13 +348,13 @@ body,html
 {
 	color: black;
 	text-align: center;
-	font-size: 1.7em;
+	font-size: 1.5em;
 }
 .navbar-nav > li > a > h5
 {
 	color: black;
 	text-align: center;
-	font-size: 1.4em;
+	font-size: 1.3em;
 }
 .newsPics
 {
@@ -299,6 +364,7 @@ body,html
 	margin-bottom: 1em;
 }
 @media(max-width: 991px){
+	
 	#redes
 	{
 		margin-left: 20%;
@@ -311,7 +377,6 @@ body,html
 	.navbar-nav > li{
 
 		font-size: 0.8em;
-		border-bottom: 1px solid white;
 
 		width:15%;
 	}
@@ -329,6 +394,14 @@ body,html
 		font-size: 0.8em;
 		text-align: center;
 		width:100%;
+	}
+	.navbar-nav > li{
+		border-bottom: 1px solid white;
+		
+	}
+	.servicio
+	{
+		width: 45% !important; 
 	}
 	.textoServicios > h3
 	{
@@ -383,9 +456,16 @@ body,html
 	{
 		font-size: 2em;
 	}
+
 	.refran
 	{
 		width: 75% !important;
+	}
+}
+@media(max-width: 541px){
+	.servicio
+	{
+		width: 95% !important; 
 	}
 }
 @media(max-width: 450px){
@@ -438,6 +518,22 @@ body,html
 {
 	background: #23A7B5;
 	color: white;
+}
+.servicio
+{
+	display:inline-block;
+	margin: 1em;
+	width: 30.33%;
+	-webkit-transition: all 0.5s ease-in-out;
+	   -moz-transition: all 0.5s ease-in-out;
+	    -ms-transition: all 0.5s ease-in-out;
+	     -o-transition: all 0.5s ease-in-out;
+	        transition: all 0.5s ease-in-out;
+}
+.servicio img
+{
+	width: 100%;
+	opacity: 0;
 }
 .slick-slide img
 {

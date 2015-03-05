@@ -18,24 +18,66 @@ function()
 	},500)
 })
 jQuery(document).ready(function($) {
-	$(window).scroll(function(){
-		var pos = $('#about').position();
+	if ($(window).width()>991) {
+		$(window).scroll(function(){
+			var pos = $('#about').position();
 
-		if (pos.top >= (parseInt($(window).scrollTop())+parseInt(95))) {
-			$('.caricatura').stop().animate({
-				'opacity': 0,
-				},
-				250);
-			console.log('entro')
+			if (pos.top >= (parseInt($(window).scrollTop())+parseInt(95))) {
+				$('.caricatura').stop().animate({
+					'opacity': 0,
+					},
+					250);
+				console.log('entro')
+			}else
+			{
+				$('.caricatura').stop().animate({
+					'opacity': 1,
+					},
+					250);
+			}
+			console.log($(window).width());
+		})
+	}else
+	{
+		$('.caricatura').stop().animate({
+					'opacity': 0,
+					},
+					250);
+	}
+	
+	$(window).resize(function(event) {
+		if ($(window).width()>991) {
+
+			$(window).scroll(function(){
+				$(window).scroll(function(){
+					var pos = $('#about').position();
+
+					if (pos.top >= (parseInt($(window).scrollTop())+parseInt(95))) {
+						$('.caricatura').stop().animate({
+							'opacity': 0,
+							},
+							250);
+						console.log('entro')
+					}else
+					{
+						$('.caricatura').stop().animate({
+							'opacity': 1,
+							},
+							250);
+					}
+					console.log($(window).width());
+				})
+			
+			})
 		}else
 		{
 			$('.caricatura').stop().animate({
-				'opacity': 1,
-				},
-				250);
+						'opacity': 0,
+						},
+						250);
 		}
-		console.log(pos.top+' '+(parseInt($(window).scrollTop())+parseInt(95)));
-	})
+	});
+		
 });
 /*$(document).ready(function ()
 {

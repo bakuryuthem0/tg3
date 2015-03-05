@@ -13,8 +13,8 @@
 			<div class="col-xs-12">
 				@foreach($servicios as $clave => $servicio)
 				<a href="{{ URL::to('servicios/'.$servicio->id) }}">
-					<div class="servicio" id="{{ $servicio->nombre }}" style="background:url('{{ asset($servicio->alt) }}')">
-						<img src="{{ URL::to('images/'.$servicio->image) }}">
+					<div class="servicio col-xs-4" id="{{ $servicio->image }}">
+						<img src="{{ asset('images/'.$servicio->image.'.png') }}">
 					</div>
 				</a>
 				@endforeach
@@ -134,7 +134,7 @@
 			<div class="col-xs-12">
 				<div class="col-xs-6 contAbout1">
 					<div class="about1 ab2">
-						<h3><strong style="font-size:1.5em;">Tecnographic Venezuela</strong></h3>
+						<h3><strong style="font-size:1.3em;">Tecnographic Venezuela</strong></h3>
 						<p class="textoPromedio">Somos una Agencia publicitaria y consultora responsable dedicada a la publicidad digital,  diseño de páginas web, tiendas virtuales, campañas de email, redes sociales y  desarrollo  de sistemas administrativos. </p>
 						<p class="textoPromedio">
 							Nos enfocamos en brindar a nuestros clientes  un servicio  de alto grado de funcionalidad,  interactividad, de manera que el sitio web se convierta en una verdadera herramienta para hacer negocios online, y que se adapte a su  necesidad.
