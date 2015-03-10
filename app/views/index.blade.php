@@ -10,11 +10,11 @@
 			<div class="col-xs-6 cont_titulo_serv">
 				<img src="{{ asset('images/img_serv/nuestros servicios-01.png') }}">
 			</div>
-			<div class="col-xs-12">
+			<div class="col-xs-12" style="margin-bottom:2em;text-align:center;">
 				@foreach($servicios as $clave => $servicio)
 				<a href="{{ URL::to('servicios/'.$servicio->id) }}">
-					<div class="servicio" id="{{ $servicio->nombre }}" style="background:url('{{ asset($servicio->alt) }}')">
-						<img src="{{ URL::to('images/'.$servicio->image) }}">
+					<div class="servicio" id="{{ $servicio->image }}" >
+						<img src="{{ URL::to('images/'.$servicio->image.'.png') }}">
 					</div>
 				</a>
 				@endforeach
@@ -134,7 +134,7 @@
 			<div class="col-xs-12">
 				<div class="col-xs-6 contAbout1">
 					<div class="about1 ab2">
-						<h3><strong style="font-size:1.5em;">Tecnographic Venezuela</strong></h3>
+						<h3><strong class="tgvnzla">Tecnographic Venezuela</strong></h3>
 						<p class="textoPromedio">Somos una Agencia publicitaria y consultora responsable dedicada a la publicidad digital,  diseño de páginas web, tiendas virtuales, campañas de email, redes sociales y  desarrollo  de sistemas administrativos. </p>
 						<p class="textoPromedio">
 							Nos enfocamos en brindar a nuestros clientes  un servicio  de alto grado de funcionalidad,  interactividad, de manera que el sitio web se convierta en una verdadera herramienta para hacer negocios online, y que se adapte a su  necesidad.
@@ -273,20 +273,59 @@
 
 				<div class="col-xs-6 forma contactusBot">
 					<legend class="textoBlanco">Por favor llene el siguiente formulario si desea que nuestros agentes se pongan en contacto con usted.</legend>
-					<form>
+						<div class="alert alert-success responseAlert">
+							
+						</div>
 						<input type="text" class="form-control formInput name " name="name" placeholder='Nombre *'/>
-						<input type="text" class="form-control formInput Email email" name="email" placeholder='Email *'/>
-						<input type="text" class="form-control formInput Subject subject" name="subject" placeholder='Asunto'/>
-						<textarea type="text" class="form-control formInput Message message" name="message" placeholder='Mensaje *' rows="7"></textarea>
+						<input type="text" class="form-control formInput email" name="email" placeholder='Email *'/>
+						<input type="text" class="form-control formInput subject" name="subject" placeholder='Asunto'/>
+						<textarea type="text" class="form-control formInput message" name="message" placeholder='Mensaje *' rows="7"></textarea>
 						<div class="cBtn col-xs-12" style="padding-left: 0px;">
 							<ul class="ulContact" style="padding-left: 0px;">
 								<li class="btn clear"><span>Borrar Campos</span></li>
 								<li class="btn send"><span>Enviar Mensaje</span></li>
 							</ul>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>	
 	</div>	
+@stop
+
+@section('postscript')
+
+	<script type="text/javascript">
+			$(document).ready(function(){
+				$('.mySlide').slick({
+					adaptiveHeight: false,
+					autoplay		: true,
+					autoplaySpeed : 5000,
+					fade: true,
+					cssEase: 'linear',
+					dots: true,
+					infinite: true,
+					speed: 300,
+					slidesToShow: 1,
+				});
+				$('.fade').slick()
+				
+				/*$('.fade').slick({
+				  dots: true,
+				  infinite: true,
+				  speed: 500,
+				  fade: true,
+				  cssEase: 'linear',
+				  adaptiveHeight: true,
+				  autoplay		: true,
+				  autoplaySpeed : 5000
+				});
+				*/
+			});
+			
+
+			
+
+			
+		</script>
+
 @stop

@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 });
 $('.letra').hover(function()
 {
-	var id = $(this).attr('id').toLowerCase();
+	var id = $(this).prop('id').toLowerCase();
 	var esto = $('#'+id);
 	esto.animate({
 		opacity: '1'
@@ -11,7 +11,7 @@ $('.letra').hover(function()
 },
 function()
 {
-	var id = $(this).attr('id').toLowerCase();
+	var id = $(this).prop('id').toLowerCase();
 	var esto = $('#'+id);
 	esto.animate({
 		opacity: '0'
@@ -34,216 +34,183 @@ jQuery(document).ready(function($) {
 				},
 				250);
 		}
-		console.log(pos.top+' '+(parseInt($(window).scrollTop())+parseInt(95)));
 	})
 });
-/*$(document).ready(function ()
-{
-	$("html").niceScroll();
-	$(window).resize(function(){
-		if (document.body) 
-		{
-			var width = document.body.clientWidth;	
-			var height = document.body.clientHeight;
-		}else
-		{
-			var width = window.width;
-			var height = window.height;
-		}
-		$('.contenedorGrande').css('min-height',height);
-
+jQuery(document).ready(function($) {
+	$('.servicio').hover(function() {
+		$(this).children('img').stop().animate({
+			'opacity': 0},
+			250);
+	}, function() {
+		$(this).children('img').stop().animate({
+			'opacity': 1},
+			250);
 	});
-	if (document.body) 
-	{
-		var width = document.body.clientWidth;	
-		var height = document.body.clientHeight;
-	}else
-	{
-		var width = window.width;
-		var height = window.height;
+});
+$('.send').click(function(event) {
+	var name = $('.name').val(),
+	email    = $('.email').val(),
+	subject  = $('.subject').val(),
+	message  = $('.message').val(),
+	boton = $(this);
+	$('.errorText').remove();
+	var dataPost = {
+		'name':name,
+		'email':email,
+		'subject':subject,
+		'messagex':message
 	}
-	$('.contenedorGrande').css('min-height',height));
-});*/
+	function alerta(esto){
 
-/*$(document).ready(function(){
-	$('.navbar-toggle').toggle(function(){
-		$('.menusera').css({'display':'block'}).animate({'opacity':1},500)
-	},function(){
-		$('.menusera').animate({'opacity':0},500,function(){
-			$(this).css({'display':'none'})
-		})
-	})
-	$(window).resize(function()
-	{
-		if ($(window).width()>991) {
-			$('.menusera').css({'display':'block'}).animate({'opacity':1},500)
-		}else
-		{
-			$('.menusera').animate({'opacity':0},500,function(){
-			$(this).css({'display':'none'})
-		})
-		}
-	})
-})
-$(document).ready(function(){
-	$('#menu li').removeClass('active');
-	var project = $('#project').offset(), 
-		about = $('#about').offset(),
-		news = $('#news').offset(),
-		contact = $('#contact').offset();
-	var top = $(window).scrollTop();
-	if (top>=(about.top-300)) {
-		$('.caricatura').stop().animate({
-		'opacity': 1,
-		},
-		500);
-	}
-	if (top<(project.top-300)) {
-			$('li:has(a[href = #home])').addClass('active');
-		}else if (top>=(project.top-300) && top<(about.top-300)) {
-			$('li:has(a[href = #project])').addClass('active');
-			$('.caricatura').stop().animate({
-				'opacity': 0,
-				},
-				500);
-		}else if (top>=(about.top-300) && top<(news.top-300)) {
-			$('li:has(a[href = #about])').addClass('active');
-		}else if (top>=(news.top-300) && top<(contact.top-300)) {
-			$('li:has(a[href = #news])').addClass('active');
-		}else if (top>=(contact.top-300)) {
-			$('li:has(a[href = #contact])').addClass('active');
-		}
-	$(window).scroll(function(){
-		$('#menu li').removeClass('active');
-		var top = $(window).scrollTop();
-		if (top>=(about.top-300)) {
-			$('.caricatura').stop().animate({
-			'opacity': 1,
-			},
-			500);
-		}
-		if (top<(project.top-300)) {
-			$('li:has(a[href = #home])').addClass('active');
-		}else if (top>=(project.top-300) && top<(about.top-300)) {
-			$('li:has(a[href = #project])').addClass('active');
-			$('.caricatura').stop().animate({
-				'opacity': 0,
-				},
-				500);
-		}else if (top>=(about.top-300) && top<(news.top-300)) {
-			$('li:has(a[href = #about])').addClass('active');
-			$('.caricatura').stop().animate({
-				'opacity': 1,
-				},
-				500);
-		}else if (top>=(news.top-300) && top<(contact.top-300)) {
-			$('li:has(a[href = #news])').addClass('active');
-		}else if (top>=(contact.top-300)) {
-			$('li:has(a[href = #contact])').addClass('active');
-		}
-	})
-})
-$(document).ready(function() {
-	function cambiaImagen() {
-		var img = $('.activo');
-		if (img.next().length>0) {
-			img.animate({'opacity':0},1500);
-			img.removeClass('activo');
-			img = img.next();
-			img.addClass('activo');
-			img.animate({'opacity':0},1);
-			img.animate({'opacity':1},1500);
-		}else
-		{
-			img.removeClass('activo')
-			img = $('.nada:first-child');
-			img.addClass('activo');
-			img.animate({'opacity':0},1);
-			img.animate({'opacity':1},1500);
-		}
-		
-	}
-	setInterval(cambiaImagen,5000);
-})
-/*$(document).ready(function()
-{
-	$('.clear').click(function() {
-		$('.inputContact').$.each(function() {
-			 $(this).val('');
+		esto.css({
+			'box-shadow': '0px 0px 1px 1px red',
+
 		});
+		esto.after('<p class="textoPromedio errorText">Debe llenar este campo</p>')
+	}
+	$('.formInput').each(function(){
+		if ($(this).val() == "") {
+			alerta($(this))
+		}
+	})
+	$('.formInput').click(function(event) {
+		$(this).css({
+			'box-shadow': '0px 0px 1px 1px transparent',
+
+		});
+		$(this).next('p').remove();
 	});
-	$('.send').click(function() {
-        //get input field values
-        var user_name       = $('input[name=name]').val(); 
-        var subject         = $('input[name=subject]').val(); 
-        var user_email      = $('input[name=email]').val();
-        var user_message    = $('textarea[name=message]').val();
-        
-        //simple validation at client's end
-        //we simply change border color to red if empty field using .css()
-        var proceed = true;
-        if(user_name==""){ 
-            $('input[name=name]').css('border-color','red'); 
-            proceed = false;
-        }
-        if(subject==""){ 
-            $('input[name=subject]').css('border-color','red'); 
-            proceed = false;
-        }
-        if(user_email==""){ 
-            $('input[name=email]').css('border-color','red'); 
-            proceed = false;
-        }
-        if(user_message=="") {  
-            $('textarea[name=message]').css('border-color','red'); 
-            proceed = false;
-        }
-        if(proceed) 
-        {
-            //data to be sent to server
-            post_data = {'userName':user_name, 'subject':subject, 'userEmail':user_email, 'userMessage':user_message};
-            
-            //Ajax post data to server
-            $.ajax({
-                url:'inicio/contacto',
+	if ($('.name').val() != "" && $('.email').val() != "" && $('.subject').val() != "" && $('.message').val() != "") {
+		$.ajax({
+			url: 'enviar-correo',
+			type: 'POST',
+			dataType: 'json',
+			data: dataPost,
+			beforeSend:function(){
+				boton.addClass('disabled');
+				boton.after('<img src="images/loader.gif" class="loading" style="margin-left:2em;">');
+			},
+			success:function(response){
+				if (response.cod == 0) {
+					$('.formInput').each(function(){
+						alerta($(this))
+					})
+				}else if(response.cod == 1)
+				{
+					$('.email').css({
+						'box-shadow': '0px 0px 1px 1px red',
+
+					});
+					$('.email').after('<p class="textoPromedio errorText">Debe introducir un email valido.</p>')
+				}else if(response.cod == 2)
+				{
+					$('.responseAlert').css({
+						'display': 'block'
+					}).animate({'opacity':1},500);
+					$('.responseAlert').html('<p class="textoPromedio">Mensaje enviado sactisfactoriamente, pronto nos pondremos en contacto con usted.</p>')
+					setTimeout(function(){
+						$('.responseAlert').animate({
+							'opacity': 0},
+							500, function() {
+							$(this).css({
+								'display':'none'
+							})
+						});
+					},5000)
+					$('.formInput').each(function(){
+						$(this).val('');
+					})
+				}
+				boton.removeClass('disabled');
+				boton.next('img').remove();
+			}
+		})
+	}
+
+	
+
+});
+$(document).ready(function(){
+    
+	$('.serv_mini').click(function()
+	{
+
+        $('.selected').removeClass('selected');
+        $(this).addClass('selected');
+		var nombre = $(this).attr('id');
+		var id = $(this).attr('data-option-value');
+		dataPost = {'nombre':nombre,'id':id};
+		console.log(id);
+		$.ajax({
+                url:'../buscar',
                 type:'POST',
-                data:post_data,
+                data: dataPost,
                 dataType:'json',
+                beforeSend:function()
+                {
+                    $('#pagina_aparte').before('<div class="contLoading"><img src="../images/loader.gif" class="loadIma"></div>');
+                    $('.loading').animate({
+                        'opacity': 1
+                        },
+                        500);
+                },
                 success:function(response)
                 {
-                	$('.addon').animate({
-							        	'opacity': 0,
-							        	},
-							        	500, function() {
-							        	$('.addon').remove();
-							        });
-                    if (response.success) {
-                    	$('.cont').before('<div class="alert alert-success addon"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Correo enviado sactisfactoriamente</div>');
-                    }else
+                    $('.contLoading').animate({
+                        'opacity':0
+                        },
+                        500,function(){
+                            $(this).remove();
+                            $('.pagAparte').animate({
+                                'opacity': 1
+                            },500);
+                        });
+                    if(response.success)
                     {
-                    	$('.cont').before('<div class="alert alert-danger col-md-6 addon"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'+response.message+'</div><div style="clear:both; addon"></div>');
-                    	$('input[name='+response.codigo+']').css('box-shadow','0px 0px 5px red');
-                    		    $(".inputContact").keyup(function() { 
-							        $(this).css('box-shadow','0px 0px 0px transparent'); 
-							        
-							    });
+                        $('.img1').css({'display':'none'});
+                        $('.img2').css({'display':'none'});
+                        $('meta[name=description]').attr('content',response.meta)
+						$('#pagina_aparte').animate({'opacity':0.5},100,function(){
+								$(this).css('background-image',"url('../images/"+response.fondo+"')")
+							}).animate({'opacity':1},500,function(){
+								$(this).css('background-image',"url('../images/"+response.fondo+"')")
+							});
+						
+                    	$('.h_titulo').animate({'opacity':0},500,function(){
+                            $(this).html(response.nombre)
+                            $(this).animate({'opacity':1},500)
+                        })
+                    	$('.text_description').animate({'opacity':0},500,function(){
+                    		$('.text_description').html(response.desc)
+                    		$('.text_description').animate({'opacity':1},500);
+                        })                    
+                        /*$('#img_titulo').animate({'opacity':0},500,function(){
+                        	$(this).remove();
+                        	$('#titulo_servicio').append('<h3 class="h_titulo">'+response.nombre+'</h3>');
+                        })*/             
+                        $('.img1').addClass('nada').addClass('activo');
+                        $('.img1').css({'display':'block','width':'100%'}).attr('src','../images/pc/'+response.img1+'.png');
+                        if (response.img2 != "") {
+                            $('.img2').addClass('nada');
+                            $('.img2').css({'display':'block','width':'50%'}).attr('src', '../images/mobile/'+response.img2+'.png');
+                        }; 
+                        $('.pagAparte').css({
+                            'display': 'block',
+                            'opacity':0
+                        })
+                    }else{
+						alert('llego mal')
                     }
                 },
-                error:function(xml)
+                error:function()
                 {
-                   alert('error')
+                    alert('error feo')
                 }
 
             });
-       
-        }else
-        {
-            alert('Debe llenar todos los campos');
-        }
-    
-	    //reset previously set border colors and hide all message on .keyup()
+	})
+})
 
-        //everything looks good! proceed...
-       
-	});
-});*/
+
+/*
+*/

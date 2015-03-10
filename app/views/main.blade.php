@@ -20,6 +20,17 @@
 		{{ HTML::style('http://fonts.googleapis.com/css?family=Roboto:400,700,300') }}
 		{{ HTML::style('js/slick-master/slick/slick.css') }}
 		{{ HTML::style('css/custom.css') }}
+		 <!-- Bootstrap Core CSS -->
+
+	    <!-- Custom CSS -->
+	    {{ HTML::style("css/scrolling-nav.css") }}
+
+	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -45,7 +56,9 @@
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<!-- Brand and toggle get grouped for better mobile display -->
-							<a href="{{ URL::to('/') }}"><img src="{{ asset('images/logo-01.png') }}" class="logo"></a>
+							<div class="col-xs-3">
+								<a href="{{ URL::to('/') }}"><img src="{{ asset('images/logo-01.png') }}" class="logo"></a>
+							</div>
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								<span class="sr-only">Toggle navigation</span>
@@ -55,15 +68,17 @@
 								</button>
 							</div>
 							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-									<li class="active"><a href="{{ $href[0] }}"><h4><strong>INICIO</strong></h4><h5><i>todo comienza aqui</i></h5></a></li>
-									<li><a href="{{ $href[1] }}"><h4><strong>SERVICIOS</strong></h4><h5><i>que hacemos</i></h5></a></li>
-									<li><a href="{{ $href[2] }}"><h4><strong>QUIENES SOMOS</strong></h4><h5><i>nuestro equipo</i></h5></a></li>
-									<li><a href="{{ $href[3] }}"><h4><strong>PORTAFOLIO</strong></h4><h5><i>nuestros clientes</i></h5></a></li>
-									<li><a href="{{ $href[4] }}"><h4><strong>CONTACTO</strong></h4><h5><i>solicte presupuesto</i></h5></a></li>
-								</ul>
-							</div><!-- /.navbar-collapse -->
+							<div class="col-xs-9" style="padding:0px;">
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding:0px;">
+									<ul class="nav navbar-nav">
+										<li class="active"><a href="{{ $href[0] }}" class="page-scroll"><h4><strong>INICIO</strong></h4><h5><i>todo comienza aqui</i></h5></a></li>
+										<li><a href="{{ $href[1] }}" class="page-scroll"><h4><strong>SERVICIOS</strong></h4><h5><i>que hacemos</i></h5></a></li>
+										<li><a href="{{ $href[2] }}" class="page-scroll"><h4><strong>QUIENES SOMOS</strong></h4><h5><i>nuestro equipo</i></h5></a></li>
+										<li><a href="{{ $href[3] }}" class="page-scroll"><h4><strong>PORTAFOLIO</strong></h4><h5><i>nuestros clientes</i></h5></a></li>
+										<li><a href="{{ $href[4] }}" class="page-scroll"><h4><strong>CONTACTO</strong></h4><h5><i>solicte presupuesto</i></h5></a></li>
+									</ul>
+								</div><!-- /.navbar-collapse -->
+							</div>
 						</div><!-- /.container-fluid -->
 					</nav>
 				</header>
@@ -113,16 +128,16 @@
 							<div id="cont_nosotros"  class="col-xs-3 contenedorBot">
 								<h2 class="info_titulo"><a href="quien.php" class="link_inf">Nosotros</a></h2>
 								<ul class="info" id="nosotros">
-									<li class="textoPromedio"><a href="#project" style="vertical-align:top;display:block;"><p>Servicios</p></a></li>
-									<li class="textoPromedio"><a href="#about" style="vertical-align:top;display:block;"><p>Quienes somos</p></a></li>
-									<li class="textoPromedio"><a href="#news" style="vertical-align:top;display:block;"><p>Portafolio</p></a></li>
+									<li class="textoPromedio"><a href="{{ $href[1] }}" class="page-scroll" style="vertical-align:top;display:block;"><p>Servicios</p></a></li>
+									<li class="textoPromedio"><a href="{{ $href[2] }}" class="page-scroll" style="vertical-align:top;display:block;"><p>Quienes somos</p></a></li>
+									<li class="textoPromedio"><a href="{{ $href[3] }}" class="page-scroll" style="vertical-align:top;display:block;"><p>Portafolio</p></a></li>
 
-									<li class="textoPromedio"><a href="#contact" style="vertical-align:top;display:block;"><p>Contacto</p></a></li>
+									<li class="textoPromedio"><a href="{{ $href[4] }}" class="page-scroll" style="vertical-align:top;display:block;"><p>Contacto</p></a></li>
 								</ul>
 							</div>
 						</div>						
 					</div>
-					<div id="redes" class="col-sm-offset-4 col-xs-6">
+					<div id="redes" class="col-xs-6">
 						<a target="_blank" href="https://www.facebook.com/pages/Tecnographic-Venezuela/1610712109156293?ref=hl">
 							<div id="face" class="redes_sociales">
 							</div>
@@ -153,6 +168,8 @@
 	{{ HTML::script('js/cambio_img.js') }}
 	{{ HTML::script('js/custom.js') }}-->
 	{{ HTML::script('js/slick-master/slick/slick.min.js') }}
+	{{ HTML::script("js/jquery.easing.min.js") }}
+    {{ HTML::script("js/scrolling-nav.js") }}
 	<script type="text/javascript">
 			$(document).ready(function(){
 				$('.mySlide').slick({

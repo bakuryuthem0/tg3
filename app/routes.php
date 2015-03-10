@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'HomeController@getIndex');
+Route::post('enviar-correo','ContactController@postContact');
+Route::get('servicios/{id}','ServiceController@getService');
+Route::post('buscar','ServiceController@postService');
