@@ -170,37 +170,9 @@
 	{{ HTML::script('js/slick-master/slick/slick.min.js') }}
 	{{ HTML::script("js/jquery.easing.min.js") }}
     {{ HTML::script("js/scrolling-nav.js") }}
-	<script type="text/javascript">
-			$(document).ready(function(){
-				$('.mySlide').slick({
-					adaptiveHeight: false,
-					autoplay		: true,
-					autoplaySpeed : 5000,
-					fade: true,
-					cssEase: 'linear',
-					dots: true,
-					infinite: true,
-					speed: 300,
-					slidesToShow: 1,
-				});
-				$('.fade').slick()
-				
-				/*$('.fade').slick({
-				  dots: true,
-				  infinite: true,
-				  speed: 500,
-				  fade: true,
-				  cssEase: 'linear',
-				  adaptiveHeight: true,
-				  autoplay		: true,
-				  autoplaySpeed : 5000
-				});
-				*/
-			});
-			
 
-			
+    @yield('postscript')
 
-			
-		</script>
+  
+	
 </html>

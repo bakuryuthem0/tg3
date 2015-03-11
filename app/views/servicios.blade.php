@@ -1,6 +1,6 @@
 @extends('main')
 @section('content')
-
+<div id="about"></div>
 <div id="pagina_aparte" class="{{ $servicio }} row">
 	<div class="container">
 		<div class="row contText">
@@ -23,7 +23,8 @@
 					<aside id="mini_slider" class="mySlide">
 						@if($id == 1)
 							<div><img src="{{ asset('images/pc/diseno_web.png') }}" class="img1"></div>
-							<div><img src="{{ asset('images/pc/diseno_web.png') }}" class="img2"></div>
+							<div><img src="{{ asset('images/pc/diseno_web2.png') }}" class="img2"></div>
+						@elseif($id == 2)
 						@elseif($id == 3)
 							<div><img src="{{ asset('images/pc/medios_impresos.png') }}" class="img1"></div>
 							<div><img src="{{ asset('images/pc/medios_impresos.png') }}" class="img2"></div>
@@ -60,8 +61,8 @@
 			</div>
 		</div>		
 		<div id="options" class="col-xs-12" style="text-align: center;margin-top:2em;">	
-			<ul class="ulContact" style="padding-left: 0px;margin-bottom:1em;">
-				<li class="btn clear"><a class="selected ini" href="{{ URL::to('servicios/'.$id) }}" style="color:white;text-decoration:none;">Inicio</a></li>
+			<ul class="ulContact" style="padding-left: 0px;">
+				<li class="btn clear" style="margin-bottom:1em;"><a class="selected ini" href="{{ URL::to('servicios/'.$id) }}" style="color:white;text-decoration:none;">Inicio</a></li>
 				@foreach($servicios as $clave => $servicio)
 					<li class="btn clear" style="margin-bottom:1em;"><a class="serv_mini" href="#." id="{{ $servicio->title }}" data-option-value="{{ $servicio->id }}">{{ ucwords(str_replace('_',' ',$servicio->nombre)) }}</a></li>
 				@endforeach

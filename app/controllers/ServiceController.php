@@ -9,16 +9,13 @@ class ServiceController extends BaseController {
 		$servicio = ContServ::where('id_serv','=',$id)->get();
 		$title = 'Servicios | Tecnographic Venezuela';
 		$meta = "Ofrecemos la mayor calidad en desarrollo de paginas web, ademas de servicios de imagen corporativa de exelente calidad";
-		$home = explode('"', link_to('#home'));
-		$project = explode('"', link_to('#project'));
-		$about = explode('"', link_to('#about'));
-		$news = explode('"', link_to('#news'));
-		$contact = explode('"', link_to('#contact'));
+		$home = explode('"', link_to('servicios/../#home'));
+		$project = explode('"', link_to('servicios/../#project'));
+		$about = explode('"', link_to('servicios/../#about'));
+		$news = explode('"', link_to('servicios/../#news'));
+		$contact = explode('"', link_to('../#contact'));
 		$href = array($home[1] ,$project[1],$about[1],$news[1],$contact[1]);
-		/*$referer = Request::server('HTTP_REFERER');
-		if ($referer == "" || $referer == null) {
-			return Redirect::to('/');
-		}*/
+
 		$self = Request::server('REQUEST_URI');
 		return View::make('servicios')
 		->with('servicios',$servicio)
