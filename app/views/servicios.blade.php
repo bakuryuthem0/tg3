@@ -1,5 +1,7 @@
 @extends('main')
 @section('content')
+<div class="contLoading">
+</div>
 <div id="about"></div>
 <div id="pagina_aparte" class="{{ $servicio }} row">
 	<div class="container">
@@ -12,13 +14,13 @@
 				</div>
 			</div>  
 			<div class="col-xs-12" style="margin-top:2em;">
-				<aside id="desc" class="col-xs-6">
+				<aside id="desc" class="col-xs-6 contMitad">
 					<div id="text" class="col-xs-12">
 						<p class="text_description textoPromedio">{{ $serv->servicios_desc }}</p>
 					</div>
 				</aside>
 
-				<div id="cont_trio" class="col-xs-4">
+				<div id="cont_trio" class="col-xs-4 contMitad">
 					
 					<aside id="mini_slider" class="mySlide">
 						@if($id == 1)

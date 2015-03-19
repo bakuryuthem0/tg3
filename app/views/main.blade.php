@@ -100,6 +100,7 @@
 								venezuela.
 								</p>
 								<p class="contac textoPromedio">
+								<i class="fa fa-mobile"></i> +58 (0424) 355.71.53<br>
 								<i class="fa fa-phone"></i> +58 (0243) 431.26.99 <br></p>
 
 								<p class="contac textoPromedio"><i class="fa fa-thumb-tack"></i> maracay edo-aragua, venezuela</p>

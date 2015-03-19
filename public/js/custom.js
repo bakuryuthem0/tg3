@@ -1,5 +1,8 @@
 jQuery(document).ready(function($) {
-	$("html").niceScroll();
+	if($(window).width()>991)
+	{
+		$("html").niceScroll();
+	}
 });
 $('.letra').hover(function()
 {
@@ -26,7 +29,7 @@ jQuery(document).ready(function($) {
 				'opacity': 0,
 				},
 				250);
-			console.log('entro')
+			
 		}else
 		{
 			$('.caricatura').stop().animate({
@@ -134,13 +137,13 @@ $(document).ready(function(){
     
 	$('.serv_mini').click(function()
 	{
-
+		$(this).unbind('click')
         $('.selected').removeClass('selected');
         $(this).addClass('selected');
 		var nombre = $(this).attr('id');
 		var id = $(this).attr('data-option-value');
 		dataPost = {'nombre':nombre,'id':id};
-		console.log(id);
+		
 		$.ajax({
                 url:'../buscar',
                 type:'POST',
@@ -148,11 +151,20 @@ $(document).ready(function(){
                 dataType:'json',
                 beforeSend:function()
                 {
-                    $('#pagina_aparte').before('<div class="contLoading"><img src="../images/loader.gif" class="loadIma"></div>');
-                    $('.loading').animate({
+                    $('.contLoading').append('<img src="../images/loader.gif" class="loadingInBlack">');
+
+                    $('.contLoading').css({
+                    	'display':'block',
+                    	'top':0
+                    }).animate({
                         'opacity': 1
                         },
-                        500);
+                        500,function(){
+                        	$("html").niceScroll({preservenativescrolling: false});
+                        	$('loading').css({
+                        		'opacity':1
+                        	});
+                        });
                 },
                 success:function(response)
                 {
@@ -160,7 +172,9 @@ $(document).ready(function(){
                         'opacity':0
                         },
                         500,function(){
-                            $(this).remove();
+                        	$("html").niceScroll({preservenativescrolling: true});
+                            $(this).css({'display':'none'});
+                            $('.loadingInBlack').remove();
                             $('.pagAparte').animate({
                                 'opacity': 1
                             },500);
@@ -211,6 +225,14 @@ $(document).ready(function(){
 	})
 })
 
-
+jQuery(document).ready(function($) {
+	
+	$('.picsGall').click(function(event) {
+		
+		var src = $(this).attr('src');
+		$('.modalImg').attr('src', src);
+		
+	});
+});
 /*
 */

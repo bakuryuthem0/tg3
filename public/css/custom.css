@@ -238,6 +238,7 @@ body,html
 	background-color: rgba(0,0,0,0.8);
 	z-index: 100;
 	opacity: 0;
+	display: none;
 }
 .cont_palabra
 {
@@ -338,6 +339,19 @@ body,html
 	height: 50px;
 	display: inline-block;
 }
+.loadingInBlack
+{
+	width: 100px;
+	height: 100px;
+	top: 50%;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+		-moz-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+				-ms-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
+}
 .navbar-default
 {
 	background-color: transparent;
@@ -379,13 +393,19 @@ body,html
 }
 .newsPics
 {
-	max-height: 340px !important;
+	height: 266px !important;
 	overflow: hidden;
-	height: 400px !important;
+	
 	margin-bottom: 1em;
 }
 @media(max-width: 991px){
-
+	#about,
+	#contact,
+	#news,
+	#project
+	{
+		background-attachment: initial !important;
+	}
 	.logo
 	{
 		margin-top: 0px;
@@ -448,6 +468,21 @@ body,html
 	{
 		width: 100% !important;
 	}
+	.container
+	{
+		width: 100% !important;
+	}
+	.contCatalogo
+	{
+		margin: 2em auto;
+		display: block;
+		float: none;
+		text-align: center;
+	}
+	.contText
+	{
+		padding-left: 0px !important;
+	}
 	.cont_titulo_serv,.cont_titulo_about,.cont_titulo_news,.cont_titulo_contact
 	{
 		width: 100% !important;
@@ -457,6 +492,10 @@ body,html
 		width: 100%;
 		text-align: center;
 		color: white;
+	}
+	.contMitad
+	{
+		width: 100% !important;
 	}
 	.contSlider
 	{
@@ -489,14 +528,18 @@ body,html
 		font-size:1.3em;
 	}
 }
-@media(max-width: 450px){
+@media(max-width:550px){
 	.contNewsPics
 	{
 		width: 100% !important;
 	}
+}
+@media(max-width: 450px){
+
+	
 	.letra
 	{
-		font-size: 1.2em;
+		font-size: 1em !important;
 	}
 	.redes_sociales
 	{
@@ -513,6 +556,26 @@ body,html
 	float: none;
 	display: block;
 	margin: 0 auto;
+}
+.modalImg
+{
+	width: 100%;
+}
+.myModal
+{
+	display: none;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+}
+.picsGall
+{
+	cursor: pointer;
 }
 .palabra
 {

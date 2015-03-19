@@ -158,6 +158,17 @@
 		<img src="{{URL::to('images/refran-01.png')}}">
 	</div>
 </div>
+<div class="modal fade" id="showImg" tabindex="-1" role="dialog" aria-labelledby="showImg" aria-hidden="true">
+		<div class="modal-dialog imgLiderUp">
+			<div class="modal-content">
+				<div class="modal-header">
+					<a type="button" class="close page-scroll" href="#news" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>
+					<img src="" class="modalImg">
+				</div>
+					
+			</div>
+		</div>
+	</div>
 <div id="news">
 	<div class="container">
 		<div class="col-xs-12">
@@ -170,7 +181,7 @@
 		<div class="row news" style="margin-bottom: 5em;">
 			<div class="col-xs-6  text-left contNewsPics">
 				<div class="col-xs-12 newsPics">
-					<img class="img-responsive picsGall" src="images/picNews/pagina web benedettococina-01.jpg"/>
+					<img class="img-responsive picsGall" data-toggle="modal" data-target="#showImg" src="images/picNews/pagina web benedettococina-01.jpg"/>
 				</div>
 				<div class="col-xs-12">
 					<h3 class="titPort"><a href="#">Benedetto Cocina</a></h3>
@@ -180,7 +191,7 @@
 			</div>
 			<div class="col-xs-6 text-right contNewsPics">
 				<div class="col-xs-12 newsPics">
-					<img class="img-responsive picsGall" src="images/picNews/pagina web carlota marquez-01.jpg"/>
+					<img class="img-responsive picsGall" data-toggle="modal" data-target="#showImg" src="images/picNews/pagina web carlota marquez-01.jpg"/>
 				</div>
 				<div class="col-xs-12">
 					<h3 class="titPort"><a href="#">Carlota Marques</a></h3>
@@ -194,7 +205,7 @@
 		<div class="row news2 news">
 			<div class="col-xs-6 text-left contNewsPics">
 				<div class="col-xs-12 newsPics">
-					<img class="img-responsive picsGall" src="images/picNews/pagina web motopanama-01.jpg"/>
+					<img class="img-responsive picsGall" data-toggle="modal" data-target="#showImg" src="images/picNews/pagina web motopanama-01.jpg"/>
 				</div>
 				<div class="col-xs-12">
 					<h3 class="titPort"><a href="#">Moto Panana</a></h3>
@@ -204,7 +215,7 @@
 			</div>
 			<div class="col-xs-6 text-right contNewsPics">
 				<div class="col-xs-12 newsPics">
-					<img class="img-responsive picsGall" src="images/picNews/pagina web rancho burguer-01-01.jpg"/>
+					<img class="img-responsive picsGall" data-toggle="modal" data-target="#showImg" src="images/picNews/pagina web rancho burguer-01-01.jpg"/>
 				</div>
 				<div class="col-xs-12">
 					<h3 class="titPort"><a href="#">Rancho Burguer</a></h3>
@@ -218,7 +229,7 @@
 		<div class="row news2 news">
 			<div class="col-xs-6 text-left contNewsPics">
 				<div class="col-xs-12 newsPics">
-					<img class="img-responsive picsGall" src="images/picNews/pagina web solodeportes-01.jpg"/>
+					<img class="img-responsive picsGall" data-toggle="modal" data-target="#showImg" src="images/picNews/pagina web solodeportes-01.jpg"/>
 				</div>
 				<div class="col-xs-12">
 					<h3 class="titPort"><a href="#">Solodeportes.net</a></h3>
@@ -228,7 +239,7 @@
 			</div>
 			<div class="col-xs-6 text-right contNewsPics">
 				<div class="col-xs-12 newsPics">
-					<img class="img-responsive picsGall" src="images/picNews/paqina web peluqueria-01.jpg"/>
+					<img class="img-responsive picsGall" data-toggle="modal" data-target="#showImg" src="images/picNews/paqina web peluqueria-01.jpg"/>
 				</div>
 				<div class="col-xs-12">
 					<h3 class="titPort"><a href="#">Fashion Gils</a></h3>
@@ -290,6 +301,7 @@
 			</div>
 		</div>	
 	</div>	
+	
 @stop
 
 @section('postscript')
@@ -307,7 +319,7 @@
 					speed: 300,
 					slidesToShow: 1,
 				});
-				$('.fade').slick()
+				
 				
 				/*$('.fade').slick({
 				  dots: true,
