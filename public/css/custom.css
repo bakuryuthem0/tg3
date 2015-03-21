@@ -76,7 +76,7 @@ body,html
 	width: 100%;
 	background: rgb(50,50,50);
 	margin-top: 2em;
-	margin-bottom: 2em;
+	
 	top: 41px;
 	position: relative;
 }
@@ -384,6 +384,22 @@ body,html
 	height: 400px !important;
 	margin-bottom: 1em;
 }
+
+@media(max-width: 1160px) and (min-width: 610px){
+	.sliderPrinc
+	{
+		  position: absolute !important;
+		  float: none !important;
+		  display: inline-block;
+		  vertical-align: middle;
+		  top: 50% !important;
+		  -webkit-transform: translateY(-50%) !important;
+		     -moz-transform: translateY(-50%) !important;
+		      -ms-transform: translateY(-50%) !important;
+		       -o-transform: translateY(-50%) !important;
+		          transform: translateY(-50%) !important;
+	}
+}
 @media(max-width: 991px){
 
 	.logo
@@ -496,7 +512,7 @@ body,html
 	}
 	.letra
 	{
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 	.redes_sociales
 	{
@@ -617,6 +633,19 @@ body,html
 	display: block;
 	margin: 0 auto;
 }
+.sliderPrinc
+{
+	  position: initial;
+	  float: none;
+	  display: inline-block;
+	  vertical-align: middle;
+	  top: 0;
+	  -webkit-transform: translateY(0);
+	     -moz-transform: translateY(0);
+	      -ms-transform: translateY(0);
+	       -o-transform: translateY(0);
+	          transform: translateY(0);
+}
 .textoBlanco
 {
 	color: white;
@@ -636,7 +665,7 @@ body,html
 .textoServicios
 {
 	text-align: justify;
-	margin-right: 5%;
+	
 }
 .textLeft
 {

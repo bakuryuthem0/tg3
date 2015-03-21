@@ -21,12 +21,12 @@
 			</div>
 			<div class="col-xs-12">
 				<div class="col-xs-6 contenedorBot textoServicios">
-					<h3>AGENCIA DE DISEÑO GRÁFICO PUBLICITARIO Y SISTEMAS ADMINISTRATIVOS</h3>
+					<h3 style="text-align:left;">AGENCIA DE DISEÑO GRÁFICO PUBLICITARIO Y SISTEMAS ADMINISTRATIVOS</h3>
 					<p class="textoPromedio"><strong>Tecnographic de Venezuela, C.A.</strong>, es su agencia de Diseño Grafico y de Sistemas Administrativos, en Maracay, Venezuela; contamos con personal altamente calificado en el ramo de la publicidad digital, diseño gráfico y diseño de herramientas online como páginas web, tiendas virtuales, campañas de email, redes sociales y sistemas administrativos. Estamos ubicados en la Ciudad de Maracay, además prestamos todos nuestros servicios de diseño gráfico en el resto de Venezuela.</p>
 					<p class="textoPromedio">
 					Entre nuestros servicios como agencia publicitaria y consultora podemos citar: Asesoría en estrategias de mercadeo, Diseño de Imagen Corporativa, Diseño Gráfico, Diseño de Logotipos en Maracay, Diseño de Páginas Web  en Maracay, Diseño de Afiches en Maracay, Diseño de Banners, Diseño de Perfiles para redes sociales, Diseño  de Empaques de Productos,  Diseño de Tarjetas de Presentación, Diseño de Señalética, Fotografía de Productos, Fotografía de Modelos, Fotografía de Espacio</p>
 				</div>
-				<div class="col-xs-4 contSlider">
+				<div class="col-xs-6 contSlider sliderPrinc">
 					<div class="mySlide">
 						<div><img src="{{URL::to('images/slides/slider1-01.png')}}"></div>
 						<div><img src="{{URL::to('images/slides/slider2-01.png')}}"></div>
