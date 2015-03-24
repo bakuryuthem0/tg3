@@ -509,10 +509,7 @@ body,html
 		text-align: center;
 		color: white;
 	}
-	.contMitad
-	{
-		width: 100% !important;
-	}
+	
 	.contSlider
 	{
 		width: 100%;
@@ -528,7 +525,7 @@ body,html
 	}
 	.letra
 	{
-		font-size: 1.8em;
+		font-size: 165%;
 	}
 	.refran
 	{
@@ -538,10 +535,17 @@ body,html
 	{
 		margin: 1em 1.5em !important;
 		width: 40% !important;
+		
 	}
 	.tgvnzla
 	{
 		font-size:1.3em;
+	}
+}
+@media(max-width: 610px){
+	.contMitad
+	{
+		width: 100% !important;
 	}
 }
 @media(max-width:550px){
@@ -712,6 +716,7 @@ body,html
 .textoBlanco
 {
 	color: white;
+	text-align: center;
 }
 .textoPromedio
 {
@@ -760,6 +765,10 @@ body,html
 .ulContact
 {
 	list-style: none;
+}
+.ulContact li 
+{
+	font-size: 1.3em;
 }
 
 /*---------------Index--------------*/

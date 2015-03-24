@@ -261,10 +261,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12" style="margin-bottom:5em;">
-						<p class="textoBlanco textoGrande textMid">
+						<legend class="textoBlanco textoGrande textMid">
 							Agradecemos nos contacte para facilitarle un presupuesto 
 	relacionado con su proyecto o para cualquier otro comentario.
-						</p>
+						</legend>
 				</div>
 				<div class="col-xs-6 cont contactusBot" style="margin-bottom:5em;">
 					<div class="col-xs-12">

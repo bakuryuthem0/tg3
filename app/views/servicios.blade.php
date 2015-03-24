@@ -20,7 +20,7 @@
 					</div>
 				</aside>
 
-				<div id="cont_trio" class="col-xs-4 contMitad">
+				<div id="cont_trio" class="col-xs-4 contMitad sliderPrinc">
 					
 					<aside id="mini_slider" class="mySlide">
 						@if($id == 1)
